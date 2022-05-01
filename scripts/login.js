@@ -1,3 +1,5 @@
+// login js
+var arr=JSON.parse(localStorage.getItem("info"))||[]
 import navbar from "../components/navbar.js";
 document.getElementById("navbar").innerHTML=navbar();
 let login = async () => {
@@ -41,8 +43,9 @@ let login = async () => {
     );
 
     let data = await res.json();
+    arr.push(data)
     console.log("user data: ", data);
-
+localStorage.setItem("info",JSON.stringify(arr))
 
   };
 // export default getUserDetail;

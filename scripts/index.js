@@ -1,11 +1,10 @@
+// index js
 import navbar from "../components/navbar.js";
 document.getElementById("navbar").innerHTML=navbar();
-// var name=document.getElementById("search").value
-// let url=`www.themealdb.com/api/json/v1/1/search.php?s=${name}`
-// let url="https://fakestoreapi.com/products/category/electronics"
+
 let container=document.getElementById("products")
 import{getData,append} from "./fetch.js";
-// import getUserDetail from "./login.js";
+
 
 document.querySelector("#btn1").addEventListener("click",searchbar)
 function searchbar()
@@ -23,6 +22,15 @@ function searchbar()
 
 
 }
+var div=document.getElementById("infodiv")
+var das=JSON.parse(localStorage.getItem("info"))
+console.log(das,"das")
+var p1=document.createElement("p");
+p1.innerText=das[0].username;
+var p2=document.createElement("p")
+p2.innerText=das[0].email;
+div.append(p1,p2)
+
 
 
 // import getUserDetail from "./login.js";

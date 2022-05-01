@@ -1,3 +1,4 @@
+// navbar .js
 function navbar(){
     return     ` <h3>
     <a href="/">Home</a>
